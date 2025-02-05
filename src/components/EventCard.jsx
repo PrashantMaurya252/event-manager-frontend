@@ -11,7 +11,7 @@ const EventCard = () => {
             <div className="flex w-full justify-between items-center">
             <span className="font-semibold">Spritual</span>
             <div className="flex justify-center items-center gap-1">
-                <span><Icon icon="ion:people-sharp" className="w-[24px] h-[24px]" /></span>
+                <span><Icon icon="ion:people-sharp" className="w-[20px] h-[20px]" /></span>
                 <span>2 People</span>
             </div>
             </div>

@@ -1,4 +1,5 @@
 import { createContext, useEffect, useState } from 'react'
+import { useLocation } from 'react-router-dom'
 
 const context = createContext()
 
@@ -6,6 +7,9 @@ const GlobalContext = ({children}) => {
     const [user,setUser]=useState(null)
     const [token,setToken] = useState(null)
     const [isLoggedIn,setIsLoggedIn] = useState(false)
+
+    // const location = useLocation()
+    // let pathname = location.pathname
 
     const logout=()=>{
         setUser(null)
@@ -27,7 +31,15 @@ const GlobalContext = ({children}) => {
     useEffect(()=>{
         const currentToken = localStorage.getItem("token")
         const currentUser = localStorage.getItem("user")
-    },[])
+
+        if(currentToken && currentUser){
+            setUser(JSON.parse(currentUser))
+            setToken(currentToken)
+            setIsLoggedIn(true)
+        }else{
+            setIsLoggedIn(false)
+        }
+    },[token])
   return (
     <context.Provider value={provider}>
      {children}
