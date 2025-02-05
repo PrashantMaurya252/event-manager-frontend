@@ -15,8 +15,8 @@ function App() {
 
   return (
    <Routes>
-    <Route path='/' element={<Home/>}/>
-    <Route path='/auth' element={<Auth/>}/>
+    {/* <Route path='/' element={<Home/>}/> */}
+    <Route path='/' element={<Auth/>}/>
     <Route path='/myevents' element={<MyEvent/>}/>
     <Route path='/create-event' element={<CreateEvent/>}/>
     <Route path='/all-events' element={<AllEvents/>}/>
